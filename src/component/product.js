@@ -19,11 +19,11 @@ export default class product extends Component {
                       <tbody>
                       {this.props.products.map((product, index)=>{
                             if(product.quantity>0){
-                            return <tr key={index}>
+                            return <tr key={product.id}>
                             <td>{product.name}</td>
                             <td>${product.price}</td>
                             <td>
-                                <button className="btn btn-primary" key={product.id} >
+                                <button onClick={()=> this.props.addToCart(product, this)} className="btn btn-primary" key={product.id} >
                                 Add
                                 </button></td>
                             </tr>}
